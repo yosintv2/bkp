@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +38,7 @@
 <script>
     window.onload = function() {
         const hash = window.location.hash.substr(1);
-        const originalURL = 'https://www.reducemyweight.net/home.html'; // Replace with the original URL
+        const originalURL = atob(hash); // Decode base64 string to get original URL
         const continueButton = document.getElementById('continueButton');
         if (hash && originalURL) {
             continueButton.href = originalURL;
