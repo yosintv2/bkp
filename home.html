@@ -1,87 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Maintenance</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Shortener</title>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        font-family: ProximaNovaRegular, Arial, Helvetica, sans-serif;
+<body>
+<h1>URL Shortener</h1>
+<p>Enter a URL to shorten:</p>
+<input type="text" id="originalURL" placeholder="Enter URL">
+<button onclick="shortenURL()">Shorten URL</button>
+<p>Shortened URL:</p>
+<input type="text" id="shortenedURL" readonly>
+<script>
+// Define a function to generate a random string
+function generateRandomString(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
 
-    }
-    .main{
-        height: 100vh;
-        width: 100vw;
-        background-color: #171a24;
-        overflow: hidden;
-    }
-    .header{
-        background-color: black;
-        padding: 1rem;
-        z-index: 1;
-    }
-    .logo{
-        width: 112px;
-    }
-    .maintenance-box{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        height: 90%;
-        width: 100%;
-        gap: 1rem;
-        overflow: hidden;
-    }
-    .maintenance-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 1rem;
-    }
-    h1{
-        font-size: 3.5rem;
-        font-weight: 100;
-        color: white;
-    }
-    h2{
-        font-size: 1.5rem;
-        font-weight: 100;
-        margin-top: 8px;
-        text-align: center;
-        color: gray;
-    }
-    .maintenance-img img{
-        width: 100%;
-    }
-    @media screen and (max-width: 768px) {
-            .maintenance-img img{
-                margin-left: 22px;
-            }
-            h1{
-                font-size: 1.75rem;
-            }
-            h2{
-                font-size: 1rem;
-            }
-    }
+// Define an object to store the URLs and their shortened versions
+const urlDatabase = {};
 
-</style>
-<body class="main">
-    <div class="maintenance-box">
-        <div class="maintenance-img">
-            <img src="https://yosintv2.github.io/tv/maintenance.svg" />
-        </div>
-        <div class="maintenance-content">
-            <h1>RMW is upgrading.</h1>
-            <h2>Our website is down for maintenance. We will be back shortly.</h2>
-        </div>
-    </div>
+// Function to shorten a URL
+function shortenURL() {
+    const originalURL = document.getElementById('originalURL').value;
+    if (originalURL.trim() === '') {
+        alert('Please enter a valid URL');
+        return;
+    }
+    const shortURL = generateRandomString(6);
+    urlDatabase[shortURL] = originalURL;
+    document.getElementById('shortenedURL').value = window.location.href + '#' + shortURL;
+}
+
+// Function to expand a shortened URL
+function expandURL(shortURL) {
+    return urlDatabase[shortURL];
+}
+
+// Check if a short URL is provided in the hash and expand it
+window.onload = function() {
+    const hash = window.location.hash.substr(1);
+    if (hash) {
+        const originalURL = expandURL(hash);
+        if (originalURL) {
+            window.location.href = originalURL;
+        } else {
+            alert('Invalid short URL');
+        }
+    }
+};
+</script>
 </body>
 </html>
