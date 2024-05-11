@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+<script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://zovidree.com/tag.min.js',7463304,document.body||document.documentElement)</script>
+  
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URL Shortener</title>
+<title>URL Parameter Link</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        padding: 20px;
-    }
-    .button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    .button:hover {
-        background-color: #0056b3;
-    }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  #countdown {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
 </style>
 </head>
 <body>
-<div class="container">
-    <h1>URL Shortener</h1>
-    <p>Enter a URL to shorten:</p>
-    <input type="text" id="originalURL" placeholder="Enter URL">
-    <button onclick="shortenURL()">Shorten URL</button>
-    <p>Shortened URL:</p>
-    <input type="text" id="shortenedURL" readonly>
-</div>
+  
+  <div></br></div>
+<div id="countdown"></div>
+<button id="goButton">Click to Watch Live</button>
 <script>
-// Define an object to store the URLs and their shortened versions
-const urlDatabase = {};
+  document.addEventListener('DOMContentLoaded', function() {
+    const countdownElement = document.getElementById('countdown');
+    const goButton = document.getElementById('goButton');
 
-// Function to shorten a URL
-function shortenURL() {
-    const originalURL = document.getElementById('originalURL').value;
-    if (originalURL.trim() === '') {
-        alert('Please enter a valid URL');
-        return;
-    }
-    const shortURL = btoa(originalURL);
-    urlDatabase[shortURL] = originalURL;
-    document.getElementById('shortenedURL').value = window.location.href + '#' + shortURL;
-}
+    let countdown = 3;
+    const countdownInterval = setInterval(() => {
+      countdownElement.textContent = `Please wait ${countdown} seconds`;
+      countdown--;
+      if (countdown < 0) {
+        clearInterval(countdownInterval);
+        countdownElement.style.display = 'none';
+        goButton.style.display = 'block';
+      }
+    }, 1000);
 
-// Function to expand a shortened URL
-function expandURL(shortURL) {
-    return urlDatabase[shortURL];
-}
-
-// Check if a short URL is provided in the hash and expand it
-window.onload = function() {
-    const hash = window.location.hash.substr(1);
-    if (hash) {
-        const originalURL = expandURL(hash);
-        if (originalURL) {
-            window.location.href = originalURL;
-        } else {
-            alert('Invalid short URL');
-        }
-    }
-};
+    goButton.addEventListener('click', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlParamValue = urlParams.get('url');
+      if (urlParamValue) {
+        window.location.href = urlParamValue;
+      } else {
+        alert('URL parameter is missing.');
+      }
+    });
+  });
 </script>
 </body>
 </html>
