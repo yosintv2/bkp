@@ -143,22 +143,20 @@ marginwidth="0"  width="100%"></iframe>
 
 
     <script>
-        document.getElementById('overlay').style.display = 'block';
-        setTimeout(function () {
-            document.getElementById('overlay').style.display = 'none';
-            var urlParams = new URLSearchParams(window.location.search);
-            var newurl = urlParams.get('newurl');
-            if (newurl) {
-                document.getElementById('myIframe').src = newurl;
-            }
-        }, 30000);
+ document.getElementById('overlay').style.display = 'block';
+ setTimeout(function () {
+ document.getElementById('overlay').style.display = 'none';
+ var urlParams = new URLSearchParams(window.location.search);
+ var newurl = urlParams.get('newurl');
+ if (newurl) {
+ document.getElementById('myIframe').src = newurl;
+ }
+ }, 30000);
 
-        setTimeout(function () {
-            document.getElementById('overlay').style.display = 'none';
-        }, 30000); // Hide the overlay after 5 seconds
+ setTimeout(function () {
+ document.getElementById('overlay').style.display = 'none';
+ }, 30000); // Hide the overlay after 5 seconds
     </script>
-<div><br/></div>
-
  
 
  
@@ -176,6 +174,4 @@ $(document).ready(function() {$(&#39;img#closed&#39;).click(function(){$(&#39;#b
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-</div>
-  
 </div>
