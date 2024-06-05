@@ -90,8 +90,7 @@
             <input type="text" id="nameInput" placeholder="Enter name">
             <button onclick="replaceCustomName()">Replace</button>
         </div>
-        <div class="content-section replaceable">
-        
+        <div class="content-section replaceable">   
 <!--
 <div class="techornate-socials" style="text-align: center;" ><a class="fa fa-play" 
 href=" https://yosintv2.github.io/ads/foot.html?id=_________" >
@@ -141,19 +140,13 @@ href=" https://yosintv2.github.io/ads/foot.html?id=_______ " >
 <div class="techornate-socials" style="text-align: center;" ><a class="fa fa-play" 
 href=" https://yosintv2.github.io/ads/foot.html?id=_______ " >
 <span class="social-counter"><b> Link 5 - custom$ </b></span></a></div>
-
-
-            
-            
-            
-            
-        </div>
-        <div class="output-section">
-            <textarea id="updatedCode" class="code-box" readonly></textarea>
-            <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        </div>
-    </div>
-    <script>
+</div>
+<div class="output-section">
+<textarea id="updatedCode" class="code-box" readonly></textarea>
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+</div>
+</div>
+<script>
         function replaceCustomName() {
             const newName = document.getElementById("nameInput").value;
             const elements = document.querySelectorAll(".replaceable");
