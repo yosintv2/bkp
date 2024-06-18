@@ -1,7 +1,6 @@
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
-    alert('Right-click is disabled. You will be redirected to Google.');
-    window.location.href = 'https://www.yosin-tv.net';
+    window.location.href = 'https://www.google.com';
 });
 
 document.addEventListener('keydown', function(event) {
