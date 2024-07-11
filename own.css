@@ -6,18 +6,20 @@
                 visibility: hidden;
             }
         }
-        .start-soon {
+
+        .countdown {
             background-color: green;
             color: white;
-            border-radius: 3px;
-            padding: 3px 7px;
+            border-radius: 1px;
+            padding: 2px 3px;
             display: inline-block;
         }
+
         .live-now {
            background-color: red;
             color: white;
             border-radius: 3px;
-            padding: 3px 7px;
+            padding: 2px 5px;
             display: inline-block;
         }
         
@@ -26,7 +28,7 @@
             background-color: grey;
             color: white;
             border-radius: 3px;
-            padding: 3px 7px;
+            padding: 2px 5px;
             display: inline-block;
         }
         
