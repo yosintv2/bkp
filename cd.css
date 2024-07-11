@@ -1,4 +1,13 @@
-    .link-box {
+.blink {
+    animation: blink-animation 1s linear infinite;
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 10; }
+    50% { opacity: 0; }
+}
+
+.link-box {
     display: flex;
     align-items: center;
     padding: 10px;
