@@ -1,11 +1,3 @@
-.blink {
-    animation: blink-animation 1s linear infinite;
-}
-
-@keyframes blink-animation {
-    0%, 100% { opacity: 10; }
-    50% { opacity: 0; }
-}
 
 .link-box {
     display: flex;
@@ -59,7 +51,17 @@
 }
 
 
-        .countdown {
+ .blink {
+    animation: blink-animation 1s linear infinite;
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 10; }
+    50% { opacity: 0; }
+}
+
+
+.countdown {
             background-color: #13B619;
             color: white;
             border-radius: 2px;
