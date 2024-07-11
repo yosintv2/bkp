@@ -15,7 +15,7 @@ function updateStatus() {
                     element.textContent = `${hours}h ${minutes}m ${seconds}s`;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
-                    element.textContent = 'Live Now';
+                    element.textContent = '🔴 𝗟𝗶𝘃𝗲 𝗡𝗼𝘄';
                     element.className = 'live-now blink';
                 } else {
                     element.textContent = 'Match End';
