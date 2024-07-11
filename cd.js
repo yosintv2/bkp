@@ -15,7 +15,7 @@
                     element.textContent = `${hours}h ${minutes}m`;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
-                    element.innerHTML = '<img src="https://cssjsimg2.procdncache.com/img/live.gif" alt="Live Now" class="blink" style="width: 20px; height: 20px;">';
+                   element.textContent = 'Live';
                     element.className = 'live-now';
                 } else {
                     element.textContent = 'Match End';
