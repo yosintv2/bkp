@@ -1,6 +1,5 @@
 .blink {
     animation: blink-animation 1s linear infinite;
-    font-size: 5px; /* Set font size to 5px */
 }
 
 @keyframes blink-animation {
@@ -14,7 +13,6 @@
     border-radius: 3px;
     padding: 2px 3px;
     display: inline-block;
-    font-size: 12px; /* Set font size to 5px */
 }
 
 .live-now {
@@ -23,7 +21,6 @@
     border-radius: 3px;
     padding: 2px 3px;
     display: inline-block;
-    font-size: 12px; /* Set font size to 5px */
 }
 
 .match-end {
@@ -32,5 +29,4 @@
     border-radius: 3px;
     padding: 2px 3px;
     display: inline-block;
-    font-size: 12px; /* Set font size to 5px */
 }
