@@ -61,21 +61,24 @@
         .countdown {
             background-color: #13B619;
             color: white;
-            border-radius: 3px;
-            padding: 10px 20px;
+            border-radius: 2px;
+            padding: 2px 6px;
             display: inline-block;
+            font-size: 5px;
         }
         .live-now {
-            background-color: #13B619;
+            background-color: red;
             color: white;
-            border-radius: 3px;
-            padding: 10px 20px;
+            border-radius: 2px;
+            padding: 2px 6px;
             display: inline-block;
+            font-size: 10px;
         }
         .match-end {
-            background-color: #13B619;
+            background-color: black;
             color: white;
-            border-radius: 3px;
-            padding: 10px 20px;
+            border-radius: 2px;
+            padding: 2px 6px;
             display: inline-block;
+            font-size: 10px;
         }
