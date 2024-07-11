@@ -1,7 +1,7 @@
     .link-box {
     display: flex;
     align-items: center;
-    padding: 0px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 2px solid #000;
     font-weight: bold;
@@ -58,7 +58,7 @@
             border-radius: 2px;
             padding: 2px 4px;
             display: inline-block;
-            font-size: 10px;
+            font-size: 12px;
         }
         .live-now {
             display: inline-block;
@@ -69,5 +69,5 @@
             border-radius: 2px;
             padding: 2px 4px;
             display: inline-block;
-            font-size: 10px;
+            font-size: 12px;
         }
