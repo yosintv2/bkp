@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Now Blinker</title>
+    <style>
+        .blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+        .start-soon {
+    background-color: green;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 5px;
+    display: inline-block;
+}
+
+.live-now {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 5px;
+    display: inline-block;
+}
+
+.match-end {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    padding: 3px 5px;
+    display: inline-block;
+}
+    </style>
+</head>
+<body>
+    <div id="status1" data-start="2024-07-11T12:00:00+09:00" data-end="2024-07-11T14:00:00+09:00">
+        Start Soon
+    </div>
+    <div id="status2" data-start="2024-07-12T12:00:00+09:00" data-end="2024-07-12T14:00:00+09:00">
+        Start Soon
+    </div>
+    <div id="status3" data-start="2024-07-13T12:00:00+09:00" data-end="2024-07-13T14:00:00+09:00">
+        Start Soon
+    </div>
+    <div id="status4" data-start="2024-07-14T12:00:00+09:00" data-end="2024-07-14T14:00:00+09:00">
+        Start Soon
+    </div>
+    <div id="status5" data-start="2024-07-11T12:00:00+09:00" data-end="2024-07-15T14:00:00+09:00">
+        Start Soon
+    </div>
+
+    <script>
+        function updateStatus() {
+            const statusElements = document.querySelectorAll('[id^="status"]');
+            const currentTime = new Date().getTime();
+
+            statusElements.forEach(element => {
+                const startTime = new Date(element.getAttribute('data-start')).getTime();
+                const endTime = new Date(element.getAttribute('data-end')).getTime();
+
+                if (currentTime < startTime) {
+                    element.textContent = 'Start Soon';
+                    element.className = 'start-soon';
+                } else if (currentTime >= startTime && currentTime <= endTime) {
+                    element.textContent = 'Live Now';
+                    element.className = 'live-now blink';
+                } else {
+                    element.textContent = 'Match End';
+                    element.className = 'match-end';
+                }
+            });
+        }
+
+        // Check every second if the current time falls within the start and end time
+        setInterval(updateStatus, 1000);
+
+        // Initial check when the page loads
+        updateStatus();
+    </script>
+</body>
+</html>
