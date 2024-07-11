@@ -1,34 +1,36 @@
-        .blink {
-            animation: blink-animation 1s steps(2, start) infinite;
-        }
-        @keyframes blink-animation {
-            to {
-                visibility: hidden;
-            }
-        }
- 
-        .countdown {
-            background-color: green;
-            color: white;
-            border-radius: 1px;
-            padding: 2px 3px;
-            display: inline-block;
-        }
+.blink {
+    animation: blink-animation 1s linear infinite;
+    font-size: 5px; /* Set font size to 5px */
+}
 
-        .live-now {
-           background-color: red;
-            color: white;
-            border-radius: 3px;
-            padding: 2px 5px;
-            display: inline-block;
-        }
-        
-        
-        .match-end  {
-            background-color: grey;
-            color: white;
-            border-radius: 3px;
-            padding: 2px 5px;
-            display: inline-block;
-        }
-        
+@keyframes blink-animation {
+    0%, 100% { opacity: 10; }
+    50% { opacity: 0; }
+}
+
+.countdown {
+    background-color: green;
+    color: white;
+    border-radius: 1px;
+    padding: 4px 5px;
+    display: inline-block;
+    font-size: 12px; /* Set font size to 5px */
+}
+
+.live-now {
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    padding: 4px 5px;
+    display: inline-block;
+    font-size: 12px; /* Set font size to 5px */
+}
+
+.match-end {
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    padding: 4px 5px;
+    display: inline-block;
+    font-size: 12px; /* Set font size to 5px */
+}
