@@ -15,7 +15,7 @@
                     element.textContent = `${hours}h ${minutes}m`;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
-                   element.textContent = 'Live';
+                   element.textContent = 'Live Now';
                     element.className = 'live-now';
                 } else {
                     element.textContent = 'Match End';
