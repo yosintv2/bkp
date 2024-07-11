@@ -1,4 +1,5 @@
- function updateStatus() {
+<script>
+        function updateStatus() {
             const statusElements = document.querySelectorAll('[id^="status"]');
             const currentTime = new Date().getTime();
 
@@ -7,8 +8,13 @@
                 const endTime = new Date(element.getAttribute('data-end')).getTime();
 
                 if (currentTime < startTime) {
-                    element.textContent = 'Start Soon';
-                    element.className = 'start-soon';
+                    const timeDiff = startTime - currentTime;
+                    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                    element.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                    element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
                     element.textContent = 'Live Now';
                     element.className = 'live-now blink';
@@ -24,3 +30,4 @@
 
         // Initial check when the page loads
         updateStatus();
+    </script>
