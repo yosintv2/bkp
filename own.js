@@ -1,5 +1,4 @@
-<script>
-        function updateStatus() {
+function updateStatus() {
             const statusElements = document.querySelectorAll('[id^="status"]');
             const currentTime = new Date().getTime();
 
@@ -30,4 +29,3 @@
 
         // Initial check when the page loads
         updateStatus();
-    </script>
