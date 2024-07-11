@@ -12,7 +12,7 @@
     background-color: green;
     color: white;
     border-radius: 1px;
-    padding: 4px 5px;
+    padding: 0px 5px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
@@ -21,7 +21,7 @@
     background-color: red;
     color: white;
     border-radius: 3px;
-    padding: 4px 5px;
+    padding: 0px 5px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
@@ -30,7 +30,7 @@
     background-color: black;
     color: white;
     border-radius: 3px;
-    padding: 4px 5px;
+    padding: 0px 5px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
