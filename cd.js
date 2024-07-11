@@ -16,7 +16,7 @@
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
                    element.textContent = 'Live Now';
-                    element.className = 'live-now';
+                    element.className = 'live-now blink';
                 } else {
                     element.textContent = 'Match End';
                     element.className = 'match-end';
