@@ -1,51 +1,45 @@
 .link-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    border: 2px solid #000;
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
-    flex-wrap: nowrap; /* Ensure items don't wrap within the box */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-}
-.link-box img {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-}
-.link-text {
-    flex-grow: 1;
-    margin-left: 20px;
-    text-decoration: none; /* Remove underline */
-    color: black; /* Ensure the text color is black */
-}
-.live-icon {
-    color: red;
-    font-weight: bold;
-    animation: blink 1s infinite;
-    margin-left: 10px;
-}
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-@media (max-width: 600px) {
-    .link-box {
-        flex-direction: row; /* Ensure direction remains row */
-        align-items: center; /* Center align items */
-    }
-    .link-text {
-        margin-left: 10px; /* Adjust margin for better spacing */
-    }
-    .live-icon {
-        margin-left: 10px; /* Adjust margin for better spacing */
-    }
-}
-.link-box:hover {
-    background-color: #d0d0d0; /* Medium-light grey background on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly more noticeable shadow effect on hover */
-}
-.link-box:hover .link-text, .link-box:hover a {
-    color: black; /* Ensure the link text color remains black on hover */
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #000;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+            flex-wrap: nowrap; /* Ensure items don't wrap within the box */
+        }
+        .link-box img {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+        .link-text {
+            flex-grow: 1;
+            margin-left: 20px;
+            text-decoration: none; /* Remove underline */
+            color: black; /* Ensure the text color is black */
+        }
+        .live-icon {
+            color: red;
+            font-weight: bold;
+            animation: blink 1s infinite;
+            margin-left: 10px;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @media (max-width: 600px) {
+            .link-box {
+                flex-direction: row; /* Ensure direction remains row */
+                align-items: center; /* Center align items */
+            }
+            .link-text {
+                margin-left: 10px; /* Adjust margin for better spacing */
+            }
+            .live-icon {
+                margin-left: 10px; /* Adjust margin for better spacing */
+            }
+        }
