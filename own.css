@@ -11,6 +11,8 @@
 .countdown {
     background-color: green;
     color: white;
+    border-radius: 1px;
+    padding: 2px 3px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
@@ -18,6 +20,8 @@
 .live-now {
     background-color: red;
     color: white;
+    border-radius: 1px;
+    padding: 2px 3px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
@@ -25,6 +29,8 @@
 .match-end {
     background-color: black;
     color: white;
+    border-radius: 1px;
+    padding: 2px 3px;
     display: inline-block;
     font-size: 12px; /* Set font size to 5px */
 }
