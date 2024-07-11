@@ -55,17 +55,17 @@
         .countdown {
             background-color: #13B619;
             color: white;
-            border-radius: 3px;
-            padding: 3px 10px;
+            border-radius: 2px;
+            padding: 2px 7px;
             display: inline-block;
         }
         .live-now {
             display: inline-block;
         }
         .match-end {
-            background-color: #13B619;
+            background-color: black;
             color: white;
-            border-radius: 3px;
-            padding: 3px 10px;
+            border-radius: 2px;
+            padding: 2px 7px;
             display: inline-block;
         }
