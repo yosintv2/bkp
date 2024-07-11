@@ -12,7 +12,7 @@
                     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-                    element.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                    element.textContent = `${hours}h${minutes}m${seconds}s`;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
                     element.innerHTML = '<img src="https://cssjsimg2.procdncache.com/img/live.gif" alt="Live Now" class="blink" style="width: 20px; height: 20px;">';
