@@ -50,41 +50,32 @@
     color: black; /* Ensure the link text color remains black on hover */
 }
 
-
- .blink {
-    animation: blink-animation 1s linear infinite;
-}
-
-@keyframes blink-animation {
-    0%, 100% { opacity: 10; }
-    50% { opacity: 0; }
-}
-
-
-.countdown {
+.blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+        }
+        .countdown {
             background-color: #13B619;
             color: white;
-            border-radius: 2px;
-            padding: 4px 9px;
+            border-radius: 3px;
+            padding: 10px 20px;
             display: inline-block;
-            font-size: 12px;
         }
         .live-now {
-            background-color: red;
+            background-color: #13B619;
             color: white;
-            border-radius: 2px;
-            padding: 4px 9px;
+            border-radius: 3px;
+            padding: 10px 20px;
             display: inline-block;
-            font-size: 12px;
         }
-
-
-
         .match-end {
-            background-color: black;
+            background-color: #13B619;
             color: white;
-            border-radius: 2px;
-            padding: 4px 9px;
+            border-radius: 3px;
+            padding: 10px 20px;
             display: inline-block;
-            font-size: 12px;
         }
