@@ -62,10 +62,10 @@
         .countdown span {
             background-color: black;
             color: white;
-            padding: 3px 5px;
+            padding: 3px 3px;
             border-radius: 1px;
             margin: 0 0px;
-            font-size: 14px;
+            font-size: 7px;
         }
 
         .live-now {
