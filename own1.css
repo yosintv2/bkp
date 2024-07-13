@@ -1,6 +1,7 @@
 .link-box {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid #000;
@@ -11,8 +12,8 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 .link-box img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
 }
 .link-text {
@@ -49,4 +50,14 @@
 }
 .link-box:hover .link-text, .link-box:hover a {
     color: black; /* Ensure the link text color remains black on hover */
+}
+
+.blink {
+    animation: blink-animation 1s linear infinite;
+    font-size: 5px; /* Set font size to 5px */
+}
+
+@keyframes blink-animation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
