@@ -12,13 +12,14 @@
                     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-                   element.innerHTML = `<span>${hours}h</span> <span>${minutes}m</span> </span>`;
+                   element.innerHTML = `<span>${hours}h</span> <span>${minutes}m</span> `;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
-                   element.textContent = 'Live Now';
+
+                  element.innerHTML = `<span> Live Now </span>`;
                     element.className = 'live-now blink';
                 } else {
-                    element.textContent = 'Match End';
+                    element.innerHTML = `<span> Match End </span>`;
                     element.className = 'match-end';
                 }
             });
