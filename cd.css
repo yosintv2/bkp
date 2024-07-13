@@ -1,4 +1,3 @@
-
 .link-box {
     display: flex;
     align-items: center;
@@ -62,26 +61,26 @@
         .countdown span {
             background-color: black;
             color: white;
-            padding: 3px 3px;
+            padding: 5px 5px;
             border-radius: 1px;
             margin: 0 0px;
-            font-size: 11px;
+            font-size: 12px;
         }
 
-        .live-now  span {
+        .live-now span {
             background-color: black;
             color: white;
-            padding: 3px 3px;
+            padding: 5px 5px;
             border-radius: 1px;
             margin: 0 0px;
-            font-size: 11px;
+            font-size: 12px;
         }
 
         .match-end span {
             background-color: black;
             color: white;
-            padding: 3px 3px;
+            padding: 5px 5px;
             border-radius: 1px;
             margin: 0 0px;
-            font-size: 11px;
+            font-size: 12px;
         }
