@@ -59,10 +59,10 @@
         }
 
         .countdown span {
-            background-color: black;
+            background-color: #13B619;
             color: white;
             padding: 5px 5px;
-            border-radius: 1px;
+            border-radius: 2px;
             margin: 0 0px;
             font-size: 12px;
         }
@@ -71,7 +71,7 @@
             background-color: black;
             color: white;
             padding: 5px 5px;
-            border-radius: 1px;
+            border-radius: 2px;
             margin: 0 0px;
             font-size: 12px;
         }
@@ -80,7 +80,7 @@
             background-color: black;
             color: white;
             padding: 5px 5px;
-            border-radius: 1px;
+            border-radius: 2px;
             margin: 0 0px;
             font-size: 12px;
         }
