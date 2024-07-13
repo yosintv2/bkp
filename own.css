@@ -1,11 +1,4 @@
-.blink {
-    animation: blink-animation 1s linear infinite;
-}
 
-@keyframes blink-animation {
-    0%, 100% { opacity: 10; }
-    50% { opacity: 0; }
-}
  .countdown span {
             background-color: black;
             color: white;
