@@ -11,8 +11,8 @@ function updateStatus() {
                     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
                     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-                    element.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                            
+                   element.innerHTML = `<span>${hours}h</span> <span>${minutes}m</span><span>${seconds}s</span> `;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
                     element.textContent = 'Watch Now';
