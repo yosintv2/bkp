@@ -68,19 +68,20 @@
             font-size: 11px;
         }
 
-        .live-now {
-            background-color: red;
-            color: white;
-            border-radius: 2px;
-            padding: 2px 6px;
-            display: inline-block;
-            font-size: 11px;
-        }
-        .match-end {
+        .live-now  span {
             background-color: black;
             color: white;
-            border-radius: 2px;
-            padding: 2px 6px;
-            display: inline-block;
-            font-size: 12px;
+            padding: 3px 3px;
+            border-radius: 1px;
+            margin: 0 0px;
+            font-size: 11px;
+        }
+
+        .match-end span {
+            background-color: black;
+            color: white;
+            padding: 3px 3px;
+            border-radius: 1px;
+            margin: 0 0px;
+            font-size: 11px;
         }
