@@ -6,14 +6,15 @@
     0%, 100% { opacity: 10; }
     50% { opacity: 0; }
 }
+        .countdown span {
+            background-color: #13B619;
+            color: white;
+            padding: 5px 5px;
+            border-radius: 2px;
+            margin: 0 0px;
+            font-size: 12px;
+        }
 
-.countdown {
-   background-color: #13B619;
-    color: white;
-    border-radius: 3px;
-    padding: 2px 3px;
-    display: inline-block;
-}
 
 .live-now {
     background-color: red;
