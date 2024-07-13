@@ -15,6 +15,7 @@
     border-radius: 0px;
     padding: 2px 3px;
     display: inline-block;
+    font-size: 11px;
 }
 
 .match-end {
@@ -23,4 +24,5 @@
     border-radius: 0px;
     padding: 2px 3px;
     display: inline-block;
+    font-size: 11px;
 }
