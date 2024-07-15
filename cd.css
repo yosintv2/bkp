@@ -68,7 +68,7 @@
         }
 
         .live-now span {
-            background-color: black;
+            background-color: red;
             color: white;
             padding: 3px 3px;
             border-radius: 0px;
