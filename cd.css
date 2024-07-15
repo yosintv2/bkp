@@ -61,26 +61,26 @@
         .countdown span {
             background-color: #13B619;
             color: white;
-            padding: 5px 5px;
-            border-radius: 2px;
+            padding: 3px 3px;
+            border-radius: 0px;
             margin: 0 0px;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .live-now span {
             background-color: black;
             color: white;
-            padding: 5px 5px;
-            border-radius: 2px;
+            padding: 3px 3px;
+            border-radius: 0px;
             margin: 0 0px;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .match-end span {
             background-color: black;
             color: white;
-            padding: 5px 5px;
-            border-radius: 2px;
+            padding: 3px 3px;
+            border-radius: 0px;
             margin: 0 0px;
-            font-size: 12px;
+            font-size: 11px;
         }
