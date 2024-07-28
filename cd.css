@@ -61,9 +61,9 @@
         .countdown span {
             background-color: black;
             color: white;
-            padding: 4px 4px;
+           padding: 1px 3px; /* Reduced padding */
             border-radius: 0px;
-            margin: 0 0px;
+            margin: 0 -1px;
             font-size: 11px;
         }
 
