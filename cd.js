@@ -1,10 +1,11 @@
- function updateStatus() {
+function updateStatus() {
             const statusElements = document.querySelectorAll('[id^="status"]');
             const currentTime = new Date().getTime();
 
             statusElements.forEach(element => {
                 const startTime = new Date(element.getAttribute('data-start')).getTime();
-                const endTime = new Date(element.getAttribute('data-end')).getTime();
+                const durationHours = parseFloat(element.getAttribute('data-duration'));
+                const endTime = startTime + durationHours * 60 * 60 * 1000;
 
                 if (currentTime < startTime) {
                     const timeDiff = startTime - currentTime;
@@ -12,7 +13,7 @@
                     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-                   element.innerHTML = `<span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span> `;
+                  element.innerHTML = `<span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span> `;
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
 
