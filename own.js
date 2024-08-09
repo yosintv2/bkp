@@ -17,7 +17,7 @@ function updateStatus() {
                     element.className = 'countdown';
                 } else if (currentTime >= startTime && currentTime <= endTime) {
 
-                  element.innerHTML = `<span> Live Now </span>`;
+                  element.innerHTML = `<span> Watch Now </span>`;
                     element.className = 'live-now blink';
                 } else {
                     element.innerHTML = `<span> Match End </span>`;
