@@ -13,7 +13,7 @@
 <script src='https://cdn.jsdelivr.net/gh/yosintv2/bkp/player.js'/>
 
   
-<script async='async' nonce='I2YLlWR-W_Sv7mZu3qWPIA' src='https://fundingchoicesmessages.google.com/i/pub-5525538810839147?ers=1'/><script nonce='I2YLlWR-W_Sv7mZu3qWPIA'>(function() {function signalGooglefcPresent() {if (!window.frames[&#39;googlefcPresent&#39;]) {if (document.body) {const iframe = document.createElement(&#39;iframe&#39;); iframe.style = &#39;width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;&#39;; iframe.style.display = &#39;none&#39;; iframe.name = &#39;googlefcPresent&#39;; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
+<script async='async' nonce='I2YLlWR-W_Sv7mZu3qWPIA' src='https://fundingchoicesmessages.google.com/i/pub-5525538810839147?ers=1'/><script nonce='I2YLlWR-W_Sv7mZu3qWPIA'>(function() {function signalGooglefcPresent() {if (!window.frames[&#39;googlefcPresent&#39;]) {if (document.body) {const iframe = document.createElement(&#39;iframe&#39;); iframe.style = &#39;width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;&#39;; iframe.style.display = &#39;none&#39;; iframe.name = &#39;googlefcPresenta&#39;; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script> 
   
  <meta content='' name='google-site-verification'/>
  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
@@ -105,6 +105,39 @@ div#adspos4 .widget.HTML { width: 48.3%; float: left; margin: 5px; margin-top: 0
 -->
   
 <style>
+  /* ######Link V2.0#######*/ 
+.livee {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            margin: 5px 0;
+            padding: 5px;
+            border: 2px solid #000; /* Increased border thickness */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            background-color: red; /* Event box red background */
+            color: white; /* Text color white */
+        }
+        .livee:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .livee-name {
+            flex: 2;
+            text-align: center;
+            color: white;
+            font-weight: bold; /* Bold event name */
+        }
+</style>
+
+
+
+
+
+  
+  <style>
 input.MyButton {
 width: 200px;
 padding: 7px;
@@ -511,33 +544,49 @@ Scroll Down &amp; Select Links !!  </a></b></p>
 
 
 <script>
-document.querySelectorAll('.openPopup').forEach(function(element) {
-  element.addEventListener('click', function(e) {
-    e.preventDefault();
-    var link = this.getAttribute('data-link');
+        function updateStatus() {
+            const eventElements = document.querySelectorAll('.event');
+            const currentTime = new Date().getTime();
 
-    // Check if the popup has already been shown
-    if (!sessionStorage.getItem('popupShown')) {
-      document.getElementById('adPopup').style.display = 'block';
+            eventElements.forEach(element => {
+                const startTime = new Date(element.getAttribute('data-start')).getTime();
+                const durationHours = parseFloat(element.getAttribute('data-duration'));
+                const endTime = startTime + durationHours * 60 * 60 * 1000;
+                const eventCountdownElement = element.querySelector('.event-countdown');
 
-      var countdownElement = document.getElementById('countdown');
-      var seconds = 5;
-      var timer = setInterval(function() {
-        seconds--;
-        countdownElement.textContent = 'Please wait ' + seconds + ' seconds...';
-        if (seconds <= 0) {
-          clearInterval(timer);
-          // Redirect to the specified link after 5 seconds
-          window.location.href = link;
+                if (currentTime < startTime) {
+                    const timeDiff = startTime - currentTime;
+                    const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                    eventCountdownElement.innerHTML = `Countdown: <span>${hours}h</span> <span>${minutes}m</span> <span>${seconds}s</span>`;
+                } else if (currentTime >= startTime &amp;&amp; currentTime <= endTime) {
+                    eventCountdownElement.innerHTML = '<div class="event-live blink">Live Now</div>';
+                } else {
+                    eventCountdownElement.textContent = 'Match End';
+                }
+
+                element.onclick = function() {
+                    window.location.href = element.getAttribute('data-link');
+                }
+            });
+
+            // Adding click functionality for .livee elements
+            const liveElements = document.querySelectorAll('.livee');
+            liveElements.forEach(element => {
+                element.onclick = function() {
+                    window.location.href = element.getAttribute('data-link');
+                }
+            });
         }
-      }, 1000);
 
-      // Set a flag in sessionStorage to indicate that the popup has been shown
-      sessionStorage.setItem('popupShown', 'true');
-    }
-  });
-});
-</script>]]></b:widget-setting>
+        // Check every second if the current time falls within the start and end time
+        setInterval(updateStatus, 1000);
+
+        // Initial check when the page loads
+        updateStatus();
+    </script>]]></b:widget-setting>
       </b:widget-settings>
       <b:includable id='main'>
         <div expr:class='&quot;alert alert-&quot;+data:title' role='alert'><data:content/></div>
@@ -2469,7 +2518,29 @@ $(document).ready(function() {$(&#39;img#closed&#39;).click(function(){$(&#39;#b
 <!-- END: Powered by Supercounters.com -->  
       
       
-      
+<script>
+        function updateStatus() 
+  
+  {
+            const eventElements = document.querySelectorAll(&#39;.event&#39;);
+            const currentTime = new Date().getTime();
+
+            // Adding click functionality for .livee elements
+            const liveElements = document.querySelectorAll(&#39;.livee&#39;);
+            liveElements.forEach(element =&gt; {
+                element.onclick = function() {
+                    window.location.href = element.getAttribute(&#39;data-link&#39;);
+                }
+            });
+        }
+
+        // Check every second if the current time falls within the start and end time
+        setInterval(updateStatus, 1000);
+
+        // Initial check when the page loads
+        updateStatus();
+    </script>
+
       
 </b:includable>
    
