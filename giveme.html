@@ -88,11 +88,10 @@
 <script>
     // Get the custom ID from the URL parameter
     const urlParams = new URLSearchParams(window.location.search);
-    const customID = urlParams.get('yosintv');
+    const customID = urlParams.get('id');
 
     // Replace (custome_ID) in the original URL with the custom ID
-    const originalURL = `https://givemereddit.eu/soccer/${customID}.html`;
-
+    const originalURL = `https://yosintv.github.io/yosintv/jwplayers.html?src=https://givemereddit.eu/soccer/${customID}.html`;
     // Set the iframe source to the modified URL
     document.getElementById('player-iframe').src = originalURL;
 </script>
