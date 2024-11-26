@@ -1,103 +1,233 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-        
-                
-        <!-- Thaa thyo malai, Code Copy garna ta sure aunchas vanera, Fuck You Machikne Randiko Chora, Kati chorchas-->
-        <!--If i find these code copied by someone, I will DMCA on that website-->
-        <!-- Code by YoSinTV, yosin-tv.net -->
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href='https://www.yosin-tv.net/favicon.ico' rel='icon' type='image/x-icon'/>
-    <title>YoSinTV MID Player</title>
-    <style>
-                     /*Font Library https://fonts.google.com/ */
-   @font-face{font-family:&#39;Neo Sans Arabic&#39;;font-style:normal;font-weight:normal;font-display:swap;src:local(&#39;Neo Sans Arabic&#39;),url(&#39;https://cdn.statically.io/gh/yallashoot808/yalla-shoot-new/6a47ce1e/NeoSansArabic.woff&#39;) format(&#39;woff&#39;)}
+  <title>YoSinTV Plyrr </title>
 
-            
-        /* Add your custom styles for the iframe container */
-        #player-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 56.25%; /* 16:9 aspect ratio (change based on your player's aspect ratio) */
-        }
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-        #player-iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            border: 0;
-        }
-    </style>
-  
-  
-    <style>
-    #player-container {
+  <meta name="description" content="ENJOY FREE LIVE JIOTV">
+
+  <meta name="keywords" content="JIOTV, LIVETV, SPORTS, MOVIES,">
+
+  <meta name="author" content="url ">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	<script>
+		       document.addEventListener("contextmenu", function(e) {
+		            e.preventDefault();
+		        }, false);
+		        document.addEventListener("keydown", function(e) {
+		            //document.onkeydown = function(e) {
+		            // "I" key
+		            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+		                disabledEvent(e);
+		            }
+		            // "J" key
+		            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+		                disabledEvent(e);
+		            }
+		            // "S" key + macOS
+		            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+		                disabledEvent(e);
+		            }
+		            // "U" key
+		            if (e.ctrlKey && e.keyCode == 85) {
+		                disabledEvent(e);
+		            }
+		            // "F12" key
+		            if (event.keyCode == 123) {
+		                disabledEvent(e);
+		            }
+		        }, false);
+		 
+		        function disabledEvent(e) {
+		            if (e.stopPropagation) {
+		                e.stopPropagation();
+		            } else if (window.event) {
+		                window.event.cancelBubble = true;
+		            }
+		            e.preventDefault();
+		            return false;
+		        }
+	</script>
+  <style>
+    html {
+      font-family: Poppins;
+      background: #000;
       margin: 0;
-      padding: 0;
+      padding: 0
+    }
+
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background: #000;
-      color: #fff;
-      overflow: hidden;
-    }
-    #iframe-iframe, #jwPlayer {
-      height: 100vh !important;
-      padding: 0;
-      margin: 0;
-    }
-    body {
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
-    #container {
-      position: absolute;
-      text-align: center;
-    }
-    video {
-      outline: 0;
-    }
-    #text {
-      position: fixed;
-      border: 0;
-      left: 0;
-      width: 100%;
-      color: #fff;
-      bottom: 50px;
-      text-align: center;
-      font-family: tahoma;
-      font-size: 20px;
       z-index: 9999;
     }
+
+    .loading-text {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      width: 100%;
+      height: 100px;
+      line-height: 100px;
+    }
+
+    .loading-text span {
+      display: inline-block;
+      margin: 0 5px;
+      color: #28B463;
+      font-family: 'Quattrocento Sans', sans-serif;
+    }
+
+    .loading-text span:nth-child(1) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 0s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(2) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 0.2s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(3) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 0.4s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(4) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 0.6s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(5) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 0.8s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(6) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 1s infinite linear alternate;
+    }
+
+    .loading-text span:nth-child(7) {
+      filter: blur(0px);
+      animation: blur-text 1.5s 1.2s infinite linear alternate;
+    }
+
+    @keyframes blur-text {
+      0% {
+        filter: blur(0px);
+      }
+
+      100% {
+        filter: blur(4px);
+      }
+    }
+
+    .plyr__video-wrapper::after {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      z-index: 10;
+      content: '';
+      height: 55px;
+      width: 80px;
+      background: url('') no-repeat;
+      background-size: 80px, auto, auto;
+    }
   </style>
-  
-</head>
-<body>
 
-<div id="player-container">
-    <iframe id="player-iframe" allowfullscreen></iframe>
-            <!--<div id="text">www.yosin-tv.net</div> -->
+
+</head><body>
+
+  <div id="loading" class="loading">
+
+    <div class="loading-text">
+    <span class="loading-text-words">Y</span>
+    <span class="loading-text-words">o</span>
+    <span class="loading-text-words">S</span>
+    <span class="loading-text-words">i</span>
+    <span class="loading-text-words">N</span>
+    <span class="loading-text-words">T</span>
+    <span class="loading-text-words">V</span>
+    
 </div>
+</div>
+<video autoplay controls crossorigin poster="https://yosintv2.github.io/tv/yosintv.png" playsinline style="--plyr-color-main: #28B463;">
+<source id="m3u8-url" src="" type="application/x-mpegURL" />
 
-	
+    </video>
+    			   <script>
+   var urlParams = new URLSearchParams(window.location.search);
+      var maxvalue=urlParams.get('url');
+
+        
+document.getElementById("m3u8-url").setAttribute("src",maxvalue);
+</script>
+</body>
 <script>
-    // Get the custom ID from the URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const customID = urlParams.get('url');
+setTimeout(videovisible, 1000)
 
-    // Replace (custome_ID) in the original URL with the custom ID
-    const originalURL = `https://yosintv2.github.io/ads/foot.html?id=https://yosintv2.github.io/bkp/plyrr.html?url=${customID}`;
-
-    // Set the iframe source to the modified URL
-    document.getElementById('player-iframe').src = originalURL;
+function videovisible() {
+    document.getElementById('loading').style.display = 'none'
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const e = document.querySelector("video"),
+        n = e.getElementsByTagName("source")[0].src,
+        o = {};
+    if (Hls.isSupported()) {
+        var config = {
+            maxMaxBufferLength: 100,
+        };
+        const t = new Hls(config);
+        t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
+            const s = t.levels.map(e => e.height);
+            o.quality = {
+                default: s[0],
+                options: s,
+                forced: !0,
+                onChange: e => (function(e) {
+                    window.hls.levels.forEach((n, o) => {
+                        n.height === e && (window.hls.currentLevel = o)
+                    })
+                })(e)
+            };
+            new Plyr(e, o)
+        }), t.attachMedia(e), window.hls = t
+    } else {
+        new Plyr(e, o)
+    }
+});
 </script>
 
-
+<!--
+ <a href="https://whatsapp.com/channel/0029VaFeiVnJf05myIBnGn1T" target="_blank">
+<span style="position: absolute; z-index: 100; top: 30px; left: 10px; height: 30px; width: 100px; color: rgb(204, 204, 204); border: 2px solid rgb(204, 204, 204); padding: 1px 0px; border-radius: 2px; text-align: center;">
+Join us
+</span>
+</a>
+-->
 	
 </body>
 </html>
