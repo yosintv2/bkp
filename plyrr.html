@@ -91,7 +91,7 @@
     const customID = urlParams.get('url');
 
     // Replace (custome_ID) in the original URL with the custom ID
-    const originalURL = `https://yosintv.github.io/player/dmca.html?url=customID}`;
+    const originalURL = `https://yosintv.github.io/player/dmca.html?url={customID}`;
 
     // Set the iframe source to the modified URL
     document.getElementById('player-iframe').src = originalURL;
